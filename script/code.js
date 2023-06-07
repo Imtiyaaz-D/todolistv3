@@ -8,9 +8,9 @@ let tempID = todoList[todoList.length-1] ? todoList[todoList.length-1].id + 1: 1
 let todoDeleteButtons;
 let todoCheckBoxes;
 let editButtons;
-​
+
 addBtn.addEventListener('click', addItem);
-​
+
 function addItem(){
     event.preventDefault();
     if(todoInput.value == ''){
@@ -28,7 +28,7 @@ function addItem(){
         renderList();
     }
 }
-​
+
 sortBtn.addEventListener('click', sortItem)
 function sortItem(){
     event.preventDefault();
@@ -43,7 +43,7 @@ function sortItem(){
     localStorage.setItem('todo-list', JSON.stringify(todoList))
     renderList();
 }
-​
+
 function deleteButtons(){
     todoDeleteButtons = [...document.querySelectorAll('.close-btn')];
     todoDeleteButtons.forEach((item)=>{
@@ -71,7 +71,7 @@ function checkBox(){
     }
     renderList();
 }
-​
+
 function editItem(){
 editButtons = [...document.querySelectorAll('.edit-btn')];
 editButtons.forEach((item)=>{
@@ -105,7 +105,7 @@ function renderList(){
                 <input type="checkbox" id="completed${item.id}" class="todo-item-checkbox" checked>
                 <p class="checked">${item.name}</p>
                 <button id="edit-btn${item.id}" class="edit-btn">Edit</button>
-​
+
                 <button id="close-btn${item.id}" class="close-btn">X</button>
             </div>
             `
@@ -115,5 +115,5 @@ function renderList(){
     checkBoxes();
     editItem();
 }
-​
+
 renderList();
